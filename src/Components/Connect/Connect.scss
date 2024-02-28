@@ -1,0 +1,51 @@
+.BackgroundConnect {
+    flex:1;
+    background:#12002b;
+    padding-top:80px;
+    display:block;
+}
+
+.modalconnect{
+    box-sizing: border-box;
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    &-title {
+        font-size:1.8rem;
+        font-weight:bold;
+    }
+    &-form{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 1rem;
+        & input{
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+    
+        & label {
+            font-weight: bold;
+            font-size:1.2rem;
+        }
+    }
+    &-rememb {
+        display:flex;
+        & label{
+            margin-left:0.25rem;
+        }
+    }
+    &-button{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+    }
+}

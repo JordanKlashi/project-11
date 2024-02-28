@@ -1,0 +1,19 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+  &-logo {
+    display: flex;
+    align-items: center;
+    width:250px;
+  }
+  &_Signin {
+   text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+  }
+ 
+}
+  

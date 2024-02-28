@@ -1,0 +1,15 @@
+.features{
+    display:flex;
+    flex-direction: row;
+    &-icon {
+        width: 100px;
+        border: 10px solid #00bc77;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    &-item {
+        flex:1;
+        padding:2.5rem;
+        width:300px;
+    }
+}

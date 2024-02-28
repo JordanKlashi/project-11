@@ -1,0 +1,34 @@
+.Banner{
+
+    &-Logo {
+    background-image: url('../../img/bank-tree.jpeg');
+    background-position: 0 -350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    position: relative;
+    width:100%;
+}
+    &-Content {
+        background: white;
+        position: absolute;
+        text-align: left;
+        padding: 2rem;
+        top: 50px;
+        right: 50px;
+        width: 380px;
+        height:200px;
+        margin: 2rem;
+    }
+    &-Sub {
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    &-Text {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+    }
+
+
+}
