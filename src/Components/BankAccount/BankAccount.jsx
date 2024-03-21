@@ -21,8 +21,8 @@ function BankAccount() {
 
     return(
         <div className="BankAccount">
-            {bank.map((account) => (
-                <div className="BankAccount-account">
+            {bank.map((account,i) => (
+                <div key={i} className="BankAccount-account">
                     <div className="BankAccount-account-wrapper">
                     <h3 className="BankAccount-account_title">{account.compte}</h3>
                     <p className="BankAccount-account_amount">{account.argent}</p>

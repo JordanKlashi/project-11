@@ -25,8 +25,8 @@ const FeaturesType = [
     return(
         <>
         <div className="features">
-            {FeaturesType.map((Item) => (
-                <div className="features-item">
+            {FeaturesType.map((Item, i) => (
+                <div key={i} className="features-item">
                     <img className="features-icon" src={Item.img} alt={Item.text}></img>
                     <h3 className="features-item-title">{Item.text}</h3>
                     <p className="features-item-text">{Item.sub}</p>

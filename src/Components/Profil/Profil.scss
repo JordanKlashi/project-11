@@ -1,13 +1,43 @@
 .Profil{
     &-welcome {
-    font-size:2rem;
+    font-size:2.3rem;
     color:white;
     font-weight:bold;}
+    margin:0;
+    padding:0;
     &-edit {
         padding:15px;
         color:white;
         background-color: #00bc77;
         font-size:1.2rem;
         font-weight:bold;
+        margin-bottom:30px;
+        &_{
+            display:none;
+            flex-direction: column;
+            padding:10px;
+            color:white;
+            align-items: center;
+            & input{
+                
+                width:250px;
+                height:30px;
+                margin-left:20px;
+                font-size:1.8rem;
+                margin:10px;
+            }
+            & label{
+                font-size:1.8rem;
+            }
+        }
+        &_Option{
+            display:flex;
+            gap:50px;
+            margin-top:25px;
+            & button{
+                width:150px;
+
+            }
+        }
     }
 }

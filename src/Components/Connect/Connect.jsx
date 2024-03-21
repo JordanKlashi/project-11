@@ -1,23 +1,36 @@
 import { useState } from 'react';
-import { useDispatch } from "react-redux";
-import { login } from "../../action/signin.user"
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../redux/slice/userSlice"
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Connect() {
-    const dispatch = useDispatch()
+    //state
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await dispatch(login(email, password))
+    // redux state
+    const {loading, error} = useSelector((state) =>state.user)
 
-        } catch (error) {
-            console.error('Erreur lors de la connexion:', error);
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let userData = {
+            email,
+            password
         }
+        dispatch(login(userData)).then((result) => {
+            if(result.payload){
+                setEmail("");
+                setPassword("");
+                navigate('/Dashboard')
+            }
+        })
+        
     }
 
     const handleEmailChange = (event) => {
@@ -33,20 +46,25 @@ function Connect() {
         <div className="BackgroundConnect">
             <section className="modalconnect">
                 <p className="modalconnect-title">Sign In</p>
-                <form  >
+                <form autoComplete='on' >
                     <div className="modalconnect-form">
-                        <label>Username</label>
-                        <input type="text" id="username" value={email} onChange={handleEmailChange} />
+                        <label htmlFor='email'>email</label>
+                        <input autoComplete='on' type="email" id="email" value={email} onChange={handleEmailChange} />
                     </div>
                     <div className="modalconnect-form">
-                        <label>Password</label>
+                        <label htmlFor='password'>Password</label>
                         <input type="password" id="password" value={password} onChange={handlePasswordChange} />
                     </div>
                     <div className="modalconnect-rememb">
-                        <input type="checkbox" id="remember-me" /><label for="remember-me">Remember me</label>
+                        <input type="checkbox" id="remember-me" /><label htmlFor="remember-me">Remember me</label>
                     </div>
                     <div>
-                    <button className="modalconnect-button" type="submit" onClick={handleSubmit}>Sign In</button>
+                    <button className="modalconnect-button" type="submit" onClick={handleSubmit}>
+                        {loading?'Loading...':'Login'}
+                    </button>
+                    {error&&(
+                        <div role='alert'>{error}</div>
+                    )}
                     </div>
                 </form>
             </section>
