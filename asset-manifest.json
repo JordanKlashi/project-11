@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/project-11/static/css/main.0536f9da.css",
+    "main.css": "/project-11/static/css/main.7195f08f.css",
     "main.js": "/project-11/static/js/main.4f94322e.js",
     "static/media/bank-tree.jpeg": "/project-11/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
     "static/media/argentBankLogo.png": "/project-11/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
     "index.html": "/project-11/index.html",
-    "main.0536f9da.css.map": "/project-11/static/css/main.0536f9da.css.map",
+    "main.7195f08f.css.map": "/project-11/static/css/main.7195f08f.css.map",
     "main.4f94322e.js.map": "/project-11/static/js/main.4f94322e.js.map"
   },
   "entrypoints": [
-    "static/css/main.0536f9da.css",
+    "static/css/main.7195f08f.css",
     "static/js/main.4f94322e.js"
   ]
 }
