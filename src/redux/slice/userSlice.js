@@ -27,16 +27,12 @@ export const login = createAsyncThunk(
 export const fetchUserProfile = createAsyncThunk(
     'userSlice/fetchUserProfile',
     async (token) => {
-        try {
-            const headers = {
-                'Authorization': `Bearer ${token}`,
-                'accept': 'application/json'
-            };
-            const { data } = await axios.post('http://localhost:3001/api/v1/user/profile', {}, { headers });
-            return data.body;
-        } catch (error) {
-            throw new Error('Failed to fetch user profile data');
-        }
+        const headers = {
+            'Authorization': `Bearer ${token}`,
+            'accept': 'application/json'
+        };
+        const { data } = await axios.post('http://localhost:3001/api/v1/user/profile', {}, { headers });
+        return data.body;
     }
 );
 
@@ -93,6 +89,13 @@ const usersSlice = createSlice({
         builder.addCase(fetchUserProfile.rejected, (state, action) => {
             state.error = action.error.message || 'Failed to fetch user profile';
         });
+        builder.addCase(editUsername.fulfilled, (state, action) => {
+            state.currentUser = action.payload;
+            state.error = null;
+        })
+        builder.addCase(editUsername.rejected, (state, action) => {
+            state.error = action.error.message || 'Failed to change username';
+        })
     },
 });
 

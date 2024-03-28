@@ -1,0 +1,169 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "User Profile API"
+paths:
+  /user/login:
+    post:
+      summary: "Login User"
+      description: "Endpoint to authenticate a user."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: body
+          name: body
+          description: "Login Payload"
+          required: true
+          schema:
+            $ref: "#/definitions/LoginPayload"
+      responses:
+        200:
+          description: "User logged in successfully"
+          schema:
+            $ref: "#/definitions/UserLoginResponse"
+  /user/signup:
+    post:
+      summary: "Signup User"
+      description: "Endpoint to register a new user."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: body
+          name: body
+          description: "Signup Payload"
+          required: true
+          schema:
+            $ref: "#/definitions/SignupPayload"
+      responses:
+        200:
+          description: "User signed up successfully"
+          schema:
+            $ref: "#/definitions/UserSignupResponse"
+  /user/profile:
+    post:
+      summary: "Retrieve User Profile"
+      description: "Endpoint to retrieve user profile."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: body
+          name: body
+          description: "User Profile Payload"
+          required: true
+          schema:
+            $ref: "#/definitions/UserProfileRequest"
+      responses:
+        200:
+          description: "User profile retrieved successfully"
+          schema:
+            $ref: "#/definitions/UserProfileResponse"
+    put:
+      summary: "Update User Profile"
+      description: "Endpoint to update user profile attributes."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: body
+          name: body
+          description: "Update user profile attributes"
+          required: true
+          schema:
+            $ref: "#/definitions/UpdateUserProfileRequest"
+      responses:
+        200:
+          description: "User profile updated successfully"
+          schema:
+            $ref: "#/definitions/UpdateUserProfileResponse"
+  /user/profile/dashboard:
+    get:
+      summary: "Retrieve User Dashboard Transactions"
+      description: "Endpoint to retrieve user's dashboard transactions."
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "User dashboard transactions retrieved successfully"
+          schema:
+            $ref: "#/definitions/UserDashboardTransactionsResponse"
+definitions:
+  LoginPayload:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      password:
+        type: "string"
+  UserLoginResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      message:
+        type: "string"
+      body:
+        type: "object"
+        properties:
+          id:
+            type: "string"
+          email:
+            type: "string"
+  SignupPayload:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      password:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      userName:
+        type: "string"
+  UserSignupResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      message:
+        type: "string"
+      body:
+        type: "object"
+        properties:
+          id:
+            type: "string"
+          email:
+            type: "string"
+  UserProfileRequest:
+    type: "object"
+    properties:
+      # Define properties for request if any
+  UserProfileResponse:
+    type: "object"
+    properties:
+      # Define properties for response if any
+  UpdateUserProfileRequest:
+    type: "object"
+    properties:
+      userName:
+        type: "string"
+      # Define other properties for update if any
+  UpdateUserProfileResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      message:
+        type: "string"
+  UserDashboardTransactionsResponse:
+    type: "object"
+    properties:
+      # Define properties for dashboard transactions response

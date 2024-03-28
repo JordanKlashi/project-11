@@ -2,33 +2,46 @@
 
     &-Logo {
     background-image: url('../../img/bank-tree.jpeg');
-    background-position: 0 33%;
+    background-position: 0 -50px;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 500px;
+    height: 300px;
     position: relative;
     width:100%;
+    border-top:1px black solid;
 }
     &-Content {
         background: white;
         position: absolute;
         text-align: left;
-        padding: 2rem;
+        padding: 1.8rem;
         top: 50px;
         right: 50px;
-        width: 380px;
-        height:200px;
+        width: 250px;
+        height:110px;
         margin: 2rem;
+
     }
     &-Sub {
         font-weight: bold;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin: 0;
     }
     &-Text {
         margin-bottom: 0;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
 
+}
+@media (max-width:900px) {
+    .Banner{
+        &-Logo{
+            height:320px;
+        }
+        &-Content{
+            top:15px;
+            right:0px;
+        }
+}
 }

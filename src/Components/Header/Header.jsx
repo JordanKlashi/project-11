@@ -16,7 +16,11 @@ function Header() {
     const isLoggedIn = userState && userState.isLoggedIn;
     const currentUser = userState.currentUser
 
-    const signInLink = isLoggedIn ? `${currentUser.firstName}` : 'Sign In';
+    const userLog = () => {
+        return (`${currentUser.userName !== undefined  ? currentUser.userName : currentUser.firstName}`);
+    };
+
+    const signInLink = isLoggedIn ? userLog() : 'Sign In';
     const signOutLink = isLoggedIn ? <>{faOut} Sign Out</> : '';
 
     const handleLogout = () => {
@@ -25,10 +29,10 @@ function Header() {
 
     return (
         <header className="main-nav">
-            <NavLink to="/" ><img className="main-nav-logo" src={Logo} alt="Logo Argent Bank"></img></NavLink>
+            <NavLink to="/project-11/" ><img className="main-nav-logo" src={Logo} alt="Logo Argent Bank"></img></NavLink>
             <div className="main-nav_bar">
-                <NavLink to={isLoggedIn ? "/Dashboard" : "/SignIn"} className="main-nav_Signin">{faProfil} {signInLink} </NavLink>               
-                <NavLink to="/" className="main-nav_Signin" onClick={handleLogout}>{signOutLink} </NavLink>
+                <NavLink to={isLoggedIn ? "/project-11/Dashboard" : "/project-11/SignIn"} className="main-nav_Signin">{faProfil} {signInLink} </NavLink>               
+                <NavLink to="/project-11/" className="main-nav_Signin" onClick={handleLogout}>{signOutLink} </NavLink>
             </div>
         </header>
     );

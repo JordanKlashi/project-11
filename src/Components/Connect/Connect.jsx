@@ -49,7 +49,7 @@ function Connect() {
                 <form autoComplete='on' >
                     <div className="modalconnect-form">
                         <label htmlFor='email'>email</label>
-                        <input autoComplete='on' type="email" id="email" value={email} onChange={handleEmailChange} />
+                        <input id='email' autoComplete='on' type="email" value={email} onChange={handleEmailChange} />
                     </div>
                     <div className="modalconnect-form">
                         <label htmlFor='password'>Password</label>
