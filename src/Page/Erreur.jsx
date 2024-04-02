@@ -1,5 +1,5 @@
 
-
+import ErreurLogo from "../img/erreur.jpg"
 import { Link } from "react-router-dom";
 
 function Erreur() {
@@ -9,9 +9,10 @@ function Erreur() {
         <p className="Erreur-Txt">
           Oups! La page que vous demandez n'existe pas.
         </p>
-        <Link to="/" className="Erreur-Link">
+        <p className="Erreur-Link"><Link to="/">
           Retourner sur la page d'accueil
-        </Link>
+        </Link></p>
+        <img src={ErreurLogo} alt="Erreur 404"/>
       </div>
     </main>
   );
