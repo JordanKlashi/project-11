@@ -1,4 +1,7 @@
 .BankAccount{
+    display:flex;
+    gap:30px;
+    flex-direction: column;
     &-account{
         display: flex;
         flex:0;
@@ -12,7 +15,7 @@
         padding: 1.5rem;
         box-sizing: border-box;
         text-align: left;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         &_details{
             display: block;
             width: 200px;

@@ -25,3 +25,10 @@ body {
     width: 1px !important;
     white-space: nowrap !important; /* 3 */
   }
+
+.BackgroundHome{
+    min-height:85vh;
+    max-height:100%;
+}
+@media (max-width:900px) {
+}

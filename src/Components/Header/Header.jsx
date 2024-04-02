@@ -29,10 +29,10 @@ function Header() {
 
     return (
         <header className="main-nav">
-            <NavLink to="/project-11/" ><img className="main-nav-logo" src={Logo} alt="Logo Argent Bank"></img></NavLink>
+            <NavLink to="/" ><img className="main-nav-logo" src={Logo} alt="Logo Argent Bank"></img></NavLink>
             <div className="main-nav_bar">
-                <NavLink to={isLoggedIn ? "/project-11/Dashboard" : "/project-11/SignIn"} className="main-nav_Signin">{faProfil} {signInLink} </NavLink>               
-                <NavLink to="/project-11/" className="main-nav_Signin" onClick={handleLogout}>{signOutLink} </NavLink>
+                <NavLink to={isLoggedIn ? "/Dashboard" : "/SignIn"} className="main-nav_Signin">{faProfil} {signInLink} </NavLink>               
+                <NavLink to="/" className="main-nav_Signin" onClick={handleLogout}>{signOutLink} </NavLink>
             </div>
         </header>
     );

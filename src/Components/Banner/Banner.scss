@@ -2,13 +2,14 @@
 
     &-Logo {
     background-image: url('../../img/bank-tree.jpeg');
-    background-position: 0 -50px;
+    background-position: 0 30%;
     background-size: cover;
     background-repeat: no-repeat;
     height: 300px;
     position: relative;
     width:100%;
     border-top:1px black solid;
+
 }
     &-Content {
         background: white;
@@ -20,7 +21,6 @@
         width: 250px;
         height:110px;
         margin: 2rem;
-
     }
     &-Sub {
         font-weight: bold;
@@ -37,11 +37,21 @@
 @media (max-width:900px) {
     .Banner{
         &-Logo{
-            height:320px;
+            height:280px;
+            background-position: 0 -50px;
+            
         }
         &-Content{
-            top:15px;
-            right:0px;
+            top:0px;
+            padding:2rem;
+            width:50%;
         }
+        &-Sub {
+            font-size: 1rem;
+        }
+        &-Text {
+            font-size: 0.8rem;
+        }
+        
 }
 }

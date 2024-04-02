@@ -6,7 +6,7 @@
   &-logo {
     display: flex;
     align-items: center;
-    width:250px;
+    width:150px;
   }
   &_bar{
     display:flex;
@@ -17,8 +17,8 @@
    text-decoration: none;
    font-weight: bold;
    color: #2c3e50;
-   font-size:21px;
-   padding-right:20px;
+   font-size:18px;
+   padding-right:10px;
     &:hover{
         text-decoration: underline;
     }
@@ -29,7 +29,7 @@
 @media (max-width: 900px) {
   .main-nav {
   &-logo {
-    width:150px;
+    width:190px;
   }
   &_bar{
     flex-direction: column;

@@ -3,10 +3,10 @@ import Features from "../Components/Features/Features.jsx"
 
 function Home() {
     return(
-        <>
+        <div className='BackgroundHome'>
         <Banner />
         <Features />
-        </>
+        </div>
     )
 }
 

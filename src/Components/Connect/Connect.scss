@@ -3,6 +3,7 @@
     background:#12002b;
     padding-top:80px;
     display:block;
+    height:75vh;
 }
 
 .modalconnect{
@@ -47,5 +48,11 @@
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+    }
+}
+
+@media (max-width:900px) {
+    .modalconnect{
+        margin-top: 0px;
     }
 }

@@ -16,12 +16,12 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/project-11/" element={<Home />} />
-        <Route path="/project-11/SignIn" element={<SignIn />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/SignIn" element={<SignIn />} />
         <Route path="*" element={<Erreur />} />
         <Route
-          path="/project-11/Dashboard"
-          element={isLoggedIn ? <Dashboard /> : <Navigate to='/project-11/SignIn' />} />
+          path="/Dashboard"
+          element={isLoggedIn ? <Dashboard /> : <Navigate to='/SignIn' />} />
       </Routes>
       <Footer />
     </Router>

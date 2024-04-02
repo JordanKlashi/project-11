@@ -5,7 +5,7 @@ import BankAccount from "../Components/BankAccount/BankAccount.jsx"
 export const Dashboard= () => {
 
     return(
-        <div className="BackgroundConnect">
+        <div className="Backgroundaccount">
         <Profil />
         <BankAccount />
         </div>
