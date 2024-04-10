@@ -23,14 +23,17 @@ function Profil() {
         event.preventDefault()
         setNewUserName(event.target.value)
     };
-    const handleSave = () => {
+    const handleSave = (event) => {
+        event.preventDefault()
         dispatch(editUsername({ username: newUserName, token: token}))
+        setNewUserName(event.target.value)
+        setIsVisible(false)
     };
 
 
     useEffect(() => {
         dispatch(fetchUserProfile(token));
-    }, [dispatch,token]);
+    }, [dispatch,token,newUserName]);
 
    
     return (

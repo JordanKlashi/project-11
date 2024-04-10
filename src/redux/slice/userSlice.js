@@ -3,10 +3,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
-    token: sessionStorage.getItem('token') || null,
-    isLoggedIn: sessionStorage.getItem('token') ? true : false,
-    currentUser: {},
-    error: null,
+    token: localStorage.getItem('token') || null,
+    isLoggedIn: localStorage.getItem('token') ? true : false,
+    currentUser: localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : {},
     loading: false
 }
 
@@ -16,7 +15,7 @@ export const login = createAsyncThunk(
         try {
             const { data } = await axios.post("http://localhost:3001/api/v1/user/login", userData);
             const token = await data.body.token;
-            sessionStorage.setItem('token', JSON.stringify(token));
+            localStorage.setItem('token', JSON.stringify(token));
             return { token };
         } catch (error) {
             throw new Error(error.response.data.message);
@@ -60,7 +59,7 @@ const usersSlice = createSlice({
     reducers: {
         logout(state) {
             state.token = null;
-            sessionStorage.clear();
+            localStorage.clear();
             state.isLoggedIn = false;
             state.currentUser = {};
             state.error = null;
@@ -70,19 +69,20 @@ const usersSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action) => {
             state.token = action.payload.token;
-            sessionStorage.setItem('token', action.payload.token);
+            localStorage.setItem('token', action.payload.token);
             state.error = null;
             state.isLoggedIn = true;
         });
 
         builder.addCase(login.rejected, (state, action) => {
-            sessionStorage.clear();
+            localStorage.clear();
             state.error = action.error.message || 'Access Denied! Invalid account';
             state.isLoggedIn = false;
         });
 
         builder.addCase(fetchUserProfile.fulfilled, (state, action) => {
             state.currentUser = action.payload;
+            localStorage.setItem('currentUser', JSON.stringify(action.payload));
             state.error = null;
         });
 
