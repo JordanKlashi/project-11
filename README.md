@@ -26,7 +26,12 @@ Fonctionnalités Principales</h2>
 <h3>Captures d'Écran</h3>
 
 <img src="https://github.com/JordanKlashi/Projet-10/assets/129075458/a1d9dd85-70d6-4f19-8ab7-031a4c13ec37" alt="Projet" width="300px" />
+</br>
 <img src="https://github.com/JordanKlashi/Projet-10/assets/129075458/c2ad27a7-a530-440c-9b09-349123139202" alt="Projet" width="300px" />
+</br>
 <img src="https://github.com/JordanKlashi/Projet-10/assets/129075458/c9914c66-20e3-403b-949e-1eb5830a3b17" alt="Projet" width="300px" />
+</br>
 <img src="https://github.com/JordanKlashi/Projet-10/assets/129075458/cf085621-fa0b-421f-862b-b22d9a0273e7" alt="Projet" width="300px" />
+</br>
+
 
